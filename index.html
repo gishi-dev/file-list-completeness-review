@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>架空資料室｜資料一覧の全件性確認</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+<header><span class="eyebrow">公開デモ / 架空資料室</span><h1>4行そろった。その一覧は全件ですか。</h1><p>件数・資料ID・続き・検索完了・版を分けて照合し、人が理由と戻り先を残します。</p><div class="steps"><span>01 入力と集計</span><span>02 候補を照合</span><span>03 原記録を確認</span><span>04 判断を記録・書き出し</span></div></header>
+<main>
+<section class="intro"><strong>すべて架空の教材です。実績を示すものではありません。</strong><p>D1〜D4・X1、V1・V2は教材内の記号です。「続き・検索完了・ページの版」は試作独自の項目で、特定のサービスの応答形式や機能を示しません。</p><p>全件の処理状態は、人の確認待ちです。資料管理担当が台帳と取得記録で確認し、全件扱いの確定者が決めます。このデモでの判断は後工程の許可ではありません。</p></section>
+<section id="ledger"></section>
+<section id="comparison">
+<div class="section-head"><div><span class="eyebrow">02 / 候補と想定表</span><h2>同じ4行でも、確認する理由は違う</h2></div><label>整理の版<select id="version"><option value="evidence">根拠付き</option><option value="count">件数だけ（比較用）</option><option value="teaching">意図的な誤りの教材</option></select></label></div>
+<label class="filter">表示する条件<select id="filter"><option value="all">すべて</option><option value="records">続き・検索完了を確認</option><option value="ids">IDの重複・不足・余分を確認</option><option value="versions">版を確認</option><option value="mismatch">想定表と不一致</option></select></label>
+<p id="replay" class="notice"></p><p id="version-note"></p><div id="cards" class="cards"></div>
+<p class="muted">想定表は先に固定した読み合わせ用の表です。人が評価した正解表ではありません。「一致」も全件の確定を意味しません。</p>
+</section>
+<section id="review"><div class="section-head"><div><span class="eyebrow">03 / 原記録と人の確認</span><h2 id="review-title"></h2></div><label>確認する条件<select id="selected"></select></label></div><div id="detail"></div></section>
+<section><span class="eyebrow">04 / 確認一覧</span><h2>判断・確認依頼・履歴を書き出す</h2><p>未記録の条件も「人の確認待ち」として含みます。入力中の下書きは記録するまで書き出されません。台帳・取得記録は変更しません。</p><div class="actions"><label>形式<select id="format"><option value="json">JSON</option><option value="csv">CSV</option><option value="md">Markdown</option></select></label><button id="preview">書き出し内容を確認</button><button id="download">ファイルを書き出す</button></div><p id="export-message" role="status"></p><pre id="export-preview" hidden></pre><details><summary>判断の履歴</summary><div id="history"></div></details></section>
+<section><span class="eyebrow">01 / 入力を編集</span><h2>台帳と取得記録の作業用コピー</h2><p>架空の値だけを入力してください。編集した条件は再整理待ちになり、保存済み候補を流用しません。編集を元に戻しても古い候補は復活しません。実際の資料取得・取り直しは行いません。</p><details id="input-editor"><summary>台帳JSON・取得記録CSVを追加・編集する</summary><label>台帳JSON<textarea id="ledger-input" rows="7" spellcheck="false"></textarea></label><label>取得記録CSV<textarea id="csv-input" rows="9" spellcheck="false"></textarea></label><p class="muted">pagesはページを | で、IDを空白で区切ります。versionsもページ順に | で区切ります。続きは「あり・なし・不明」、検索完了は「完了・未完了・不明」。空欄はnull、想定外の値は入力の誤りとして扱います。</p><button id="apply-input">入力を反映</button><p id="input-message" role="status"></p></details></section>
+<footer>AIは確認理由の整理、コードは集計と記録の制御、人は原記録の確認と判断を担います。外部APIへの接続・送信・削除・通知・後工程の実行はありません。入力と判断はこの画面のメモリー内だけに保持し、再読み込みで初期化します。</footer>
+</main>
+</body></html>

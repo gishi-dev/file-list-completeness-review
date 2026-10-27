@@ -1,0 +1,120 @@
+{
+  "ledger": {
+    "ids": [
+      "D1",
+      "D2",
+      "D3",
+      "D4"
+    ],
+    "version": "V1",
+    "scope": "架空資料室の直下にある手順書、旧版とごみ箱を除く、担当Aの閲覧範囲",
+    "at": "2026-10-27 09:00"
+  },
+  "conditions": [
+    {
+      "id": "A",
+      "pages": [
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "D3",
+          "D4"
+        ]
+      ],
+      "continuation": "なし",
+      "completion": "完了",
+      "versions": [
+        "V1",
+        "V1"
+      ]
+    },
+    {
+      "id": "B",
+      "pages": [
+        [
+          "D1",
+          "D2",
+          "D3",
+          "D4"
+        ]
+      ],
+      "continuation": "あり",
+      "completion": "完了",
+      "versions": [
+        "V1"
+      ]
+    },
+    {
+      "id": "C",
+      "pages": [
+        [
+          "D1",
+          "D2",
+          "D3",
+          "D4"
+        ]
+      ],
+      "continuation": "なし",
+      "completion": "未完了",
+      "versions": [
+        "V1"
+      ]
+    },
+    {
+      "id": "D",
+      "pages": [
+        [
+          "D1",
+          "D2",
+          "D3",
+          "D4"
+        ]
+      ],
+      "continuation": "不明",
+      "completion": "不明",
+      "versions": [
+        "V1"
+      ]
+    },
+    {
+      "id": "E",
+      "pages": [
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "D2",
+          "X1"
+        ]
+      ],
+      "continuation": "なし",
+      "completion": "完了",
+      "versions": [
+        "V1",
+        "V1"
+      ]
+    },
+    {
+      "id": "F",
+      "pages": [
+        [
+          "D1",
+          "D2"
+        ],
+        [
+          "D3",
+          "D4"
+        ]
+      ],
+      "continuation": "なし",
+      "completion": "完了",
+      "versions": [
+        "V1",
+        "V2"
+      ]
+    }
+  ]
+}
